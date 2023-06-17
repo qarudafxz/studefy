@@ -12,12 +12,16 @@ function AddStudent({ ...props }) {
 	const [id, setStudentid] = useState("");
 	const [program, setProgram] = useState("");
 	const [name, setName] = useState("");
+	const [age, setAge] = useState(0);
+	const [address, setAddress] = useState("");
+	const [contactNumber, setContactNumber] = useState("");
+	const [progress, setProgress] = useState(0);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		setProgress(30);
 
-		if (!id || !program || !name) {
+		if (!id || !program || !name || !age || !address || !contactNumber) {
 			toast.error("Please enter all student information!", {
 				position: "top-right",
 				autoClose: 5000,
@@ -41,6 +45,9 @@ function AddStudent({ ...props }) {
 				id,
 				program,
 				name,
+				age,
+				address,
+				contact_number: contactNumber,
 			}),
 		}).then((res) => {
 			if (res.status === 500) {
@@ -117,23 +124,41 @@ function AddStudent({ ...props }) {
 						/>
 					</div>
 					<div className='flex flex-col gap-4 mt-8'>
-						<h1>Student ID:</h1>
+						<h1 className='font-semibold'>Student ID:</h1>
 						<input
 							type='text'
 							className='border border-[#D5D5D5] py-2 pl-2 rounded-md focus:outline-none'
 							onChange={(e) => setStudentid(e.target.value)}
 						/>
-						<h1>Student Program:</h1>
+						<h1 className='font-semibold'>Student Program:</h1>
 						<input
 							type='text'
 							className='border border-[#D5D5D5] py-2 pl-2 rounded-md focus:outline-none'
 							onChange={(e) => setProgram(e.target.value)}
 						/>
-						<h1>Student Name:</h1>
+						<h1 className='font-semibold'>Student Name:</h1>
 						<input
 							type='text'
 							className='border border-[#D5D5D5] py-2 pl-2 rounded-md focus:outline-none'
 							onChange={(e) => setName(e.target.value)}
+						/>
+						<h1 className='font-semibold'>Student Age:</h1>
+						<input
+							type='text'
+							className='border border-[#D5D5D5] py-2 pl-2 rounded-md focus:outline-none'
+							onChange={(e) => setAge(e.target.value)}
+						/>
+						<h1 className='font-semibold'>Student Address:</h1>
+						<input
+							type='text'
+							className='border border-[#D5D5D5] py-2 pl-2 rounded-md focus:outline-none'
+							onChange={(e) => setAddress(e.target.value)}
+						/>
+						<h1 className='font-semibold'>Student Contact Number:</h1>
+						<input
+							type='text'
+							className='border border-[#D5D5D5] py-2 pl-2 rounded-md focus:outline-none'
+							onChange={(e) => setContactNumber(e.target.value)}
 						/>
 						<button
 							type='submit'

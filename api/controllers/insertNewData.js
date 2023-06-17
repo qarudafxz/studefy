@@ -6,7 +6,7 @@ const router = express.Router();
 //creating a api endpoint for inserting data in xml file
 router.post("/insert", (req, res) => {
 	//these are the parameters being extracted from the request body from frontend
-	const { id, program, name } = req.body;
+	const { id, program, name, age, address, contact_number } = req.body;
 
 	try {
 		//defining the path of the xml file
@@ -22,9 +22,12 @@ router.post("/insert", (req, res) => {
 			const insertData = data.replace(
 				"</students>",
 				`<student id="${id}">
-      <programid>${program}</programid>
-      <name>${name}</name>
-      </student>
+     <programid>${program}</programid>
+     <name>${name}</name>
+					<age>${age}</age>
+					<address>${address}</address>
+					<contactnumber>${contact_number}</contactnumber>
+     </student>
     </students>`
 			);
 

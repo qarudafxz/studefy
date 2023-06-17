@@ -1,43 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <students>
- <student id="211-00483">
+  <student id="211-00483">
     <programid>BSIT</programid>
-    <name>Francis</name>
+    <name>Francis Tin-ao</name>
+    <age>20</age>
+    <address>Luz Village, Butuan City</address>
+      <contactnumber>09087479193</contactnumber>
   </student>
-  <student id="211-11111">
+  <student id="211-00012">
     <programid>BSIT</programid>
-    <name>Lenor</name>
+    <name>Carlo Gaballo</name>
+    <age>34</age>
+    <address>Libertad, Butuan City</address>
+    <contactnumber>0909090909</contactnumber>
   </student>
-  <student id="211-12345">
-    <programid>BSCS</programid>
-    <name>Patrick</name>
-  </student>
-  <student id="211-11456">
-    <programid>BSIS</programid>
-    <name>Angelo</name>
-  </student>
-  <student id="211-44444">
-    <programid>BSIT</programid>
-    <name>Zeke</name>
-  </student>
- <student id="211-14523">
-   <programid>BSCS</programid>
-   <name>Jake Cuenka</name>
-  </student>
-  <student id="211-1234">
-    <programid>BSBio</programid>
-    <name>Kevin Durant</name>
-    </student>
-  <student id="201-11432">
-    <programid>BS-Ed</programid>
-    <name>Sheshable shesh</name>
-  </student>
-<student id="211-00483">
-      <programid>BSCS</programid>
-      <name>Francis Tin-ao</name>
-      </student>
-    <student id="211-14325">
-      <programid>BSEcE</programid>
-      <name>Claire Jones</name>
-      </student>
-    </students>
+</students>

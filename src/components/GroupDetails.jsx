@@ -19,7 +19,7 @@ function GroupDetails() {
 		},
 	];
 	return (
-		<div className='text-center bg-[#f1f1f1] rounded-md m-auto p-8 py-12'>
+		<div className='shadow-xl text-center bg-[#f1f1f1] rounded-md m-auto p-8 py-12'>
 			<img
 				src={Fra}
 				className='w-24 h-auto m-auto rounded-full border-4'

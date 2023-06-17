@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+import { motion } from "framer-motion";
 import { BsFillPersonBadgeFill } from "react-icons/bs";
 
 function RecentlyAdded() {
@@ -36,7 +37,9 @@ function RecentlyAdded() {
 	}, []);
 
 	return (
-		<div className='font-main flex flex-col gap-2 p-4 border border-[#D5D5D5] rounded-md shadow-xl'>
+		<motion.div
+			whileHover={{ scale: 1.05 }}
+			className='font-main flex flex-col gap-2 p-4 border border-[#D5D5D5] rounded-md shadow-xl'>
 			<div className='flex justify-between items-center'>
 				<h1 className='font-thin text-md'>Recently Added Student</h1>
 				<BsFillPersonBadgeFill />
@@ -52,7 +55,7 @@ function RecentlyAdded() {
 					Student Name: <span className='font-thin'>{studData.name}</span>
 				</h1>
 			</div>
-		</div>
+		</motion.div>
 	);
 }
 

@@ -5,6 +5,7 @@ import NumOfStudents from "../components/NumOfStudents";
 import RecentlyAdded from "../components/RecentlyAdded";
 import RecentlyDeleted from "../components/RecentlyDeleted";
 import GroupDetails from "../components/GroupDetails";
+import Requiremens from "../components/Requiremens";
 
 function Home() {
 	return (
@@ -37,6 +38,7 @@ function Home() {
 			</div>
 			<div className='mx-24 mt-10 w-5/12'>
 				<GroupDetails />
+				<Requiremens />
 			</div>
 		</div>
 	);

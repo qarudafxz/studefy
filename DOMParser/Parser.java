@@ -36,6 +36,21 @@ public class Parser {
             "Name: " +
             eElement.getElementsByTagName("name").item(0).getTextContent()
           );
+          System.out.println(
+            "Age: " +
+            eElement.getElementsByTagName("age").item(0).getTextContent()
+          );
+          System.out.println(
+            "Address: " +
+            eElement.getElementsByTagName("address").item(0).getTextContent()
+          );
+          System.out.println(
+            "Contact Number: " +
+            eElement
+              .getElementsByTagName("contactnumber")
+              .item(0)
+              .getTextContent()
+          );
           System.out.println("-----------------------");
           System.out.println("\n");
         }
