@@ -1,14 +1,78 @@
 package server.rmi_client;
 
-import java.rmi.Remote;
-import java.rmi.RemoteException;
+public class Student {
+  protected String id;
+  protected String programid;
+  protected String name;
+  protected String age;
+  protected String address;
+  protected String contact_number;
 
-public interface Student extends Remote {
-  public String getStudentID() throws RemoteException;
+  public Student(
+    String id,
+    String programid,
+    String name,
+    String age,
+    String address,
+    String contact_number
+  ) {
+    this.id = id;
+    this.programid = programid;
+    this.name = name;
+    this.age = age;
+    this.address = address;
+    this.contact_number = contact_number;
+  }
 
-  public String getProgramID() throws RemoteException;
+  public String getId() {
+    return id;
+  }
 
-  public String getName() throws RemoteException;
+  public void setId(String id) {
+    this.id = id;
+  }
 
-  public String getAge() throws RemoteException;
+  public String getProgramid() {
+    return programid;
+  }
+
+  public void setProgramid(String programid) {
+    this.programid = programid;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getAge() {
+    return age;
+  }
+
+  public void setAge(String age) {
+    this.age = age;
+  }
+
+  public String getAddress() {
+    return address;
+  }
+
+  public void setAddress(String address) {
+    this.address = address;
+  }
+
+  public void setContactNumber(String contact_number) {
+    this.contact_number = contact_number;
+  }
+
+  public String getContactNumber() {
+    return contact_number;
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Hello World");
+  }
 }

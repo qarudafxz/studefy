@@ -6,6 +6,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import server.rmi_client.Student;
 
 public class Parser {
 
@@ -51,6 +52,35 @@ public class Parser {
               .item(0)
               .getTextContent()
           );
+
+          String id = eElement.getAttribute("id");
+          String programid = eElement
+            .getElementsByTagName("programid")
+            .item(0)
+            .getTextContent();
+
+          String name = eElement
+            .getElementsByTagName("name")
+            .item(0)
+            .getTextContent();
+
+          String age = eElement
+            .getElementsByTagName("age")
+            .item(0)
+            .getTextContent();
+
+          String address = eElement
+            .getElementsByTagName("address")
+            .item(0)
+            .getTextContent();
+
+          String contact_number = eElement
+            .getElementsByTagName("contactnumber")
+            .item(0)
+            .getTextContent();
+
+          new Student(id, programid, name, age, address, contact_number);
+
           System.out.println("-----------------------");
           System.out.println("\n");
         }
