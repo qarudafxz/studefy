@@ -1,24 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <students>
-  <student id="211-00483">
-    <programid>BSIT</programid>
-    <name>Francis Tin-ao</name>
-    <age>20</age>
-    <address>Luz Village, Butuan City</address>
-      <contactnumber>09087479193</contactnumber>
-  </student>
-  <student id="211-00012">
-    <programid>BSIT</programid>
-    <name>Carlo Gaballo</name>
-    <age>34</age>
-    <address>Libertad, Butuan City</address>
-    <contactnumber>0909090909</contactnumber>
-  </student>
-<student id="211-11234">
-     <programid>BSIS</programid>
-     <name>Java Programming</name>
-					<age>21</age>
-					<address>BXU</address>
-					<contactnumber>094321234</contactnumber>
+<student id="211-00483">
+     <programid>BSIT</programid>
+     <name>Francis Tin-ao</name>
+					<age>20</age>
+					<address>Luz Village, Butuan City</address>
+					<contactnumber>09087479193</contactnumber>
      </student>
     </students>
