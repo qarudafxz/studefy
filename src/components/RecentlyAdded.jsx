@@ -36,7 +36,7 @@ function RecentlyAdded() {
 	}, []);
 
 	return (
-		<div className='flex flex-col gap-2 p-4 border border-[#D5D5D5] rounded-md shadow-xl'>
+		<div className='font-main flex flex-col gap-2 p-4 border border-[#D5D5D5] rounded-md shadow-xl'>
 			<div className='flex justify-between items-center'>
 				<h1 className='font-thin text-md'>Recently Added Student</h1>
 				<BsFillPersonBadgeFill />

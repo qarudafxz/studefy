@@ -32,32 +32,12 @@
     <programid>BS-Ed</programid>
     <name>Sheshable shesh</name>
   </student>
-<student id="211-53423">
-      <programid>BSMath</programid>
-      <name>George Washington</name>
-      </student>
-    <student id="211-24123">
+<student id="211-00483">
       <programid>BSCS</programid>
-      <name>Jonathan Joe</name>
+      <name>Francis Tin-ao</name>
       </student>
-    <student id="191-42568">
-      <programid>BSCE</programid>
-      <name>Harvey Sta. Cruz</name>
-      </student>
-    <student id="211-49234">
-      <programid>BSIT</programid>
-      <name>Fra Fra</name>
-      </student>
-    <student id="211-00914">
-      <programid>BSIT</programid>
-      <name>Carlo Gaballo</name>
-      </student>
-    <student id="211-56743">
-      <programid>BSIS</programid>
-      <name>Justin Jandayan</name>
-      </student>
-    <student id="211-99999">
-      <programid>BSPsychology</programid>
-      <name>Emerald Jewelry</name>
+    <student id="211-14325">
+      <programid>BSEcE</programid>
+      <name>Claire Jones</name>
       </student>
     </students>

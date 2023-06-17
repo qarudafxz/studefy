@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import { IoCloseCircleSharp, IoReturnUpBackOutline } from "react-icons/io5";
@@ -74,6 +74,8 @@ function AddStudent({ ...props }) {
 			}
 		});
 	};
+
+	useEffect(() => {}, []);
 	return (
 		<div className='absolute bg-white w-9/12 rounded-md shadow-md'>
 			<ToastContainer
@@ -102,7 +104,7 @@ function AddStudent({ ...props }) {
 						delay: 0.5,
 						ease: [0, 0.71, 0.2, 1.01],
 					}}
-					className='flex flex-col gap-4 p-10 w-5/12 bg-white absolute z-10 left-62 top-42 bg-blend-overlay shadow-2xl'>
+					className='flex flex-col gap-4 p-10 w-5/12 bg-white absolute z-10 left-62 top-42 rounded-xl bg-blend-overlay shadow-2xl'>
 					<div className='flex justify-between items-center'>
 						<img
 							src={Logo}
@@ -136,7 +138,7 @@ function AddStudent({ ...props }) {
 						/>
 						<button
 							type='submit'
-							className='bg-gradient-to-tr from-slate-700 to-slate-400 text-white font-bold py-3 rounded-md'>
+							className='mt-12 bg-gradient-to-tr from-slate-700 to-slate-400 text-white font-bold py-3 rounded-md'>
 							Add Record
 						</button>
 					</div>
