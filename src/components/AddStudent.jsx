@@ -12,7 +12,6 @@ function AddStudent({ ...props }) {
 	const [id, setStudentid] = useState("");
 	const [program, setProgram] = useState("");
 	const [name, setName] = useState("");
-	const [progress, setProgress] = useState(0);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();

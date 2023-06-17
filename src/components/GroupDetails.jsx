@@ -15,6 +15,7 @@ function GroupDetails() {
 		},
 		{
 			icon: <BsGithub size={20} />,
+			link: "https://github.com/qarudafxz/it106_final_project",
 		},
 	];
 	return (
