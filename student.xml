@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<students>
+ <student id="211-00483">
+    <programid>BSIT</programid>
+    <name>Francis</name>
+  </student>
+  <student id="211-11111">
+    <programid>BSIT</programid>
+    <name>Lenor</name>
+  </student>
+  <student id="211-12345">
+    <programid>BSCS</programid>
+    <name>Patrick</name>
+  </student>
+  <student id="211-11456">
+    <programid>BSIS</programid>
+    <name>Angelo</name>
+  </student>
+  <student id="211-44444">
+    <programid>BSIT</programid>
+    <name>Zeke</name>
+  </student>
+ <student id="211-14523">
+   <programid>BSCS</programid>
+   <name>Jake Cuenka</name>
+  </student>
+  <student id="211-1234">
+    <programid>BSBio</programid>
+    <name>Kevin Durant</name>
+    </student>
+  <student id="201-11432">
+    <programid>BS-Ed</programid>
+    <name>Sheshable shesh</name>
+  </student>
+<student id="211-53423">
+      <programid>BSMath</programid>
+      <name>George Washington</name>
+      </student>
+    <student id="211-24123">
+      <programid>BSCS</programid>
+      <name>Jonathan Joe</name>
+      </student>
+    <student id="191-42568">
+      <programid>BSCE</programid>
+      <name>Harvey Sta. Cruz</name>
+      </student>
+    <student id="211-49234">
+      <programid>BSIT</programid>
+      <name>Fra Fra</name>
+      </student>
+    <student id="211-00914">
+      <programid>BSIT</programid>
+      <name>Carlo Gaballo</name>
+      </student>
+    <student id="211-56743">
+      <programid>BSIS</programid>
+      <name>Justin Jandayan</name>
+      </student>
+    <student id="211-99999">
+      <programid>BSPsychology</programid>
+      <name>Emerald Jewelry</name>
+      </student>
+    </students>
