@@ -26,32 +26,6 @@ public class Parser {
         System.out.println("\nCurrent Element: " + nNode.getNodeName());
         if (nNode.getNodeType() == Node.ELEMENT_NODE) {
           Element eElement = (Element) nNode;
-          System.out.println(
-            "Student roll no : " + eElement.getAttribute("id")
-          );
-          System.out.println(
-            "Program ID: " +
-            eElement.getElementsByTagName("programid").item(0).getTextContent()
-          );
-          System.out.println(
-            "Name: " +
-            eElement.getElementsByTagName("name").item(0).getTextContent()
-          );
-          System.out.println(
-            "Age: " +
-            eElement.getElementsByTagName("age").item(0).getTextContent()
-          );
-          System.out.println(
-            "Address: " +
-            eElement.getElementsByTagName("address").item(0).getTextContent()
-          );
-          System.out.println(
-            "Contact Number: " +
-            eElement
-              .getElementsByTagName("contactnumber")
-              .item(0)
-              .getTextContent()
-          );
 
           String id = eElement.getAttribute("id");
           String programid = eElement
@@ -79,8 +53,15 @@ public class Parser {
             .item(0)
             .getTextContent();
 
-          new Student(id, programid, name, age, address, contact_number);
-
+          Student s1 = new Student(
+            id,
+            programid,
+            name,
+            age,
+            address,
+            contact_number
+          );
+          s1.displayInfo();
           System.out.println("-----------------------");
           System.out.println("\n");
         }

@@ -72,7 +72,12 @@ public class Student {
     return contact_number;
   }
 
-  public static void main(String[] args) {
-    System.out.println("Hello World");
+  public void displayInfo() {
+    System.out.println("Student ID Number: " + id);
+    System.out.println("Program ID: " + programid);
+    System.out.println("Name: " + name);
+    System.out.println("Age: " + age);
+    System.out.println("Address: " + address);
+    System.out.println("Contact Number: " + contact_number);
   }
 }
