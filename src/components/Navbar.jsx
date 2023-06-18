@@ -1,15 +1,22 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import TopLoadingBar from "react-top-loading-bar";
+
 import Logo from "../assets/logo.svg";
+import Extracted from "./Extracted";
 
 import { BiPlusCircle } from "react-icons/bi";
+import { BsFillFileEarmarkCodeFill } from "react-icons/bs";
 import AddStudent from "../components/AddStudent";
 
 import { motion } from "framer-motion";
 
 function Navbar() {
 	const [isClick, setIsClick] = useState(false);
+	const [isExtract, setIsExtract] = useState(null);
+	const [message, setMessage] = useState("");
+	const [progress, setProgress] = useState(0);
 
 	const map = [
 		{
@@ -18,8 +25,35 @@ function Navbar() {
 		},
 	];
 
+	const extractDataInJava = async () => {
+		setIsExtract(false);
+		setProgress(30);
+		try {
+			await fetch("http://localhost:3001/api/extractData", {
+				method: "GET",
+			}).then((res) => {
+				if (res.ok) {
+					const data = res.json();
+					data.then((data) => {
+						setMessage(data.message);
+						setIsExtract(true);
+						setProgress(100);
+					});
+				}
+			});
+		} catch (err) {
+			console.error(err);
+		}
+	};
+
 	return (
 		<div className='flex justify-between items-center font-main'>
+			<TopLoadingBar
+				color='#3F4A61'
+				progress={progress}
+				onLoaderFinished={() => setProgress(0)}
+				height={12}
+			/>
 			{isClick && (
 				<AddStudent
 					isClick={isClick}
@@ -53,9 +87,20 @@ function Navbar() {
 					onClick={() => setIsClick(!isClick)}
 					className='font-thin flex gap-4 items-center py-2 px-4 hover:bg-[#D5D5D5] duration-300 rounded-full'>
 					<BiPlusCircle />
-					Insert Record
+					Add Record
+				</button>
+				<button
+					onClick={extractDataInJava}
+					className='font-thin flex gap-4 items-center py-2 px-4 hover:bg-[#D5D5D5] duration-300 rounded-full'>
+					<BsFillFileEarmarkCodeFill />
+					Extract Data
 				</button>
 			</div>
+			<Extracted
+				setIsExtract={setIsExtract}
+				isExtract={isExtract}
+				message={message}
+			/>
 		</div>
 	);
 }

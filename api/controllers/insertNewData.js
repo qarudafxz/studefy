@@ -1,5 +1,6 @@
 import express from "express";
 import fs from "fs";
+import { spawn } from "child_process";
 
 const router = express.Router();
 
@@ -89,4 +90,26 @@ router.get("/last", async (req, res) => {
 		return;
 	}
 });
+
+//executes the parser file
+router.get("/extractData", (req, res) => {
+	const javaProcess = spawn("java", [
+		"D:\\it106_activity\\DOMParser\\Parser.java",
+	]);
+
+	javaProcess.stdout.on("data", (data) => {
+		console.log(data.toString());
+	});
+
+	javaProcess.stderr.on("data", (data) => {
+		console.error(data.toString());
+	});
+
+	//closing the java process to avoid memory leaks
+	javaProcess.on("close", (code) => {
+		console.log(`Java program exited	with code ${code}`);
+		res.status(201).json({ message: "Data extraction completed" });
+	});
+});
+
 export { router as insertNewDataRouter };

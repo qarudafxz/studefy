@@ -5,6 +5,20 @@
      <name>Francis Tin-ao</name>
 					<age>20</age>
 					<address>Luz Village, Butuan City</address>
-					<contactnumber>09087479193</contactnumber>
+					<contactnumber>09123456789</contactnumber>
+     </student>
+    <student id="211-12345">
+     <programid>BSIT</programid>
+     <name>Carlo Gaballo</name>
+					<age>69</age>
+					<address>Libertad, Butuan City</address>
+					<contactnumber>094523134</contactnumber>
+     </student>
+    <student id="211-11223">
+     <programid>BSEdu</programid>
+     <name>Truman Falcon</name>
+					<age>20</age>
+					<address>Libertad, Butuan City</address>
+					<contactnumber>0912312312</contactnumber>
      </student>
     </students>

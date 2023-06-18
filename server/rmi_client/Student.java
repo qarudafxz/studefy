@@ -73,11 +73,11 @@ public class Student {
   }
 
   public void displayInfo() {
-    System.out.println("Student ID Number: " + id);
-    System.out.println("Program ID: " + programid);
-    System.out.println("Name: " + name);
-    System.out.println("Age: " + age);
-    System.out.println("Address: " + address);
-    System.out.println("Contact Number: " + contact_number);
+    System.out.println(id);
+    System.out.println(programid);
+    System.out.println(name);
+    System.out.println(age);
+    System.out.println(address);
+    System.out.println(contact_number);
   }
 }

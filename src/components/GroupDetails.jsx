@@ -25,8 +25,8 @@ function GroupDetails() {
 				className='w-24 h-auto m-auto rounded-full border-4'
 			/>
 			<div className='mt-4'>
-				<h1 className='font-bold text-xl'>ParaDEVS</h1>
-				<p>@paradevs</p>
+				<h1 className='font-bold text-xl'>Francis Tin-ao</h1>
+				<p>@francis.tinao</p>
 			</div>
 			<div className='flex gap-4 mt-6'>
 				<div className='flex flex-row gap-4 m-auto'>
