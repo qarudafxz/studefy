@@ -7,6 +7,7 @@ import RecentlyDeleted from "../components/RecentlyDeleted";
 import GroupDetails from "../components/GroupDetails";
 import Students from "../components/Students";
 import Requiremens from "../components/Requiremens";
+import LiveClock from "../components/LiveClock";
 
 function Home() {
 	return (
@@ -20,12 +21,13 @@ function Home() {
 							Define the list of your students by adding new data
 						</p>
 					</div>
-					<h1 className='bg-[#f1f1f1] py-2 px-4 rounded-md'>
+					<h1 className='flex flex-row gap-4 items-center bg-[#f1f1f1] py-2 px-4 rounded-md'>
 						{new Date().toLocaleDateString("en-US", {
 							year: "numeric",
 							month: "long",
 							day: "numeric",
 						})}
+						<LiveClock />
 					</h1>
 				</div>
 				<div className='grid grid-cols-3 mt-8 gap-4'>
@@ -34,7 +36,13 @@ function Home() {
 					<NumOfStudents />
 				</div>
 				<div className='flex flex-col gap-4 mt-10'>
-					<h1 className='font-bold text-4xl'>Student List</h1>
+					<div className='flex flex-col gap-2'>
+						<h1 className='font-bold text-4xl'>Student List</h1>
+						<p className='font-thin text-sm italic'>
+							These are the list of your students with their corresponding details. You
+							can edit or delete their data
+						</p>
+					</div>
 					<Students />
 				</div>
 			</div>

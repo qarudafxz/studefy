@@ -55,7 +55,7 @@ function AddStudent({ ...props }) {
 
 				toast.error(data.message, {
 					position: "top-right",
-					autoClose: 5000,
+					autoClose: 4000,
 					hideProgressBar: false,
 					closeOnClick: true,
 					pauseOnHover: true,
@@ -65,9 +65,9 @@ function AddStudent({ ...props }) {
 				});
 				return;
 			} else {
-				toast.success("Student added successfully!", {
+				toast.success("Student added successfully! \n Please wait...", {
 					position: "top-right",
-					autoClose: 5000,
+					autoClose: 3000,
 					hideProgressBar: false,
 					closeOnClick: true,
 					pauseOnHover: true,
@@ -76,6 +76,9 @@ function AddStudent({ ...props }) {
 					theme: "light",
 				});
 				setProgress(100);
+				setTimeout(() => {
+					window.location.reload();
+				}, 3300);
 				return;
 			}
 		});

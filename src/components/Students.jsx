@@ -7,7 +7,7 @@ import { FiEdit } from "react-icons/fi";
 import { students } from "../data/students.js";
 
 function Students() {
-	const pageSize = 6; // Number of rows per page
+	const pageSize = 5; // Number of rows per page
 	const [currentPage, setCurrentPage] = useState(1);
 
 	const handlePageChange = (page) => {

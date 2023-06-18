@@ -43,4 +43,42 @@
 					<contactnumber>09087479193</contactnumber>
      </student>
 
+    <student id="211-14234">
+     <programid>BSIT</programid>
+     <name>Michael Angelo</name>
+					<age>1423</age>
+					<address>Europe</address>
+					<contactnumber>091231242314</contactnumber>
+     </student>
+ 
+    <student id="201-11223">
+     <programid>BSEdu</programid>
+     <name>Juan Dela Cruz</name>
+					<age>21</age>
+					<address>Ampayon, Butuan City</address>
+					<contactnumber>0942321234</contactnumber>
+     </student>
+
+    <student id="111-11111">
+     <programid>BSEcE</programid>
+     <name>Joe Jonas</name>
+					<age>21</age>
+					<address>Butuan City</address>
+					<contactnumber>09123456789</contactnumber>
+     </student>
+   
+    <student id="211-00483">
+     <programid>BSIT</programid>
+     <name>Francis Tin-ao</name>
+					<age>20</age>
+					<address>Butuan City</address>
+					<contactnumber>09087479193</contactnumber>
+     </student>
+    <student id="211-14234">
+     <programid>BSIT</programid>
+     <name>Carlo Gaballo</name>
+					<age>20</age>
+					<address>Libertad, Butuan City</address>
+					<contactnumber>0912321423</contactnumber>
+     </student>
     </students>
