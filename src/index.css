@@ -25,3 +25,16 @@
  transform: scale(0.5);
  transition: opacity 0.8s ease, transform 0.8s ease;
 }
+
+@keyframes loading {
+ 0% {
+   opacity: 0;
+ }
+ 100% {
+   opacity: 1;
+ }
+}
+
+.loading {
+ animation: loading 3s ease-in;
+}

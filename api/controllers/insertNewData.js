@@ -106,8 +106,7 @@ router.get("/extractData", (req, res) => {
 	});
 
 	//closing the java process to avoid memory leaks
-	javaProcess.on("close", (code) => {
-		console.log(`Java program exited	with code ${code}`);
+	javaProcess.on("close", () => {
 		res.status(201).json({ message: "Data extraction completed" });
 	});
 });

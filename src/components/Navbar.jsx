@@ -22,6 +22,9 @@ function Navbar() {
 		setIsExtract(false);
 		setProgress(30);
 		try {
+			setTimeout(() => {
+				setProgress(60);
+			}, 1200);
 			await fetch("http://localhost:3001/api/extractData", {
 				method: "GET",
 			}).then((res) => {
