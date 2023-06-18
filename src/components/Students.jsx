@@ -85,7 +85,7 @@ function Students() {
 									key={page}
 									className={`${
 										page === currentPage
-											? "font-bold bg-[#D5D5D5] rounded-full py-2 px-4"
+											? "font-bold bg-gradient-to-tr from-slate-700 to-slate-500 text-white rounded-full py-2 px-4"
 											: "hover:bg-[#D5D5D5] duration-150 py-2 px-4 rounded-full"
 									} cursor-pointer`}
 									onClick={() => handlePageChange(page)}>

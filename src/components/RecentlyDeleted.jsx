@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { BsTrash3 } from "react-icons/bs";
+import { MdOutlineTransferWithinAStation } from "react-icons/md";
 
 import { motion } from "framer-motion";
 function RecentlyAdded() {
@@ -11,8 +11,8 @@ function RecentlyAdded() {
 			whileHover={{ scale: 1.05 }}
 			className='font-main flex flex-col gap-2 p-4 border border-[#D5D5D5] rounded-md shadow-xl'>
 			<div className='flex justify-between items-center'>
-				<h1 className='font-thin text-md '>Recently Deleted Student</h1>
-				<BsTrash3 />
+				<h1 className='font-thin text-md '>Recently Removed Student</h1>
+				<MdOutlineTransferWithinAStation />
 			</div>
 			<div className='flex flex-col'>
 				<h1 className='font-semibold'>Student ID:</h1>
