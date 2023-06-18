@@ -44,7 +44,6 @@ function RecentlyAdded() {
 				backgroundPosition: "right",
 				position: "relative",
 				backgroundRepeat: "no-repeat",
-				whileHover,
 			}}>
 			<div className='absolute top-0 left-0 right-0 bottom-0'></div>
 			<div className='relative flex justify-between items-center'>
