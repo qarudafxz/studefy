@@ -62,3 +62,27 @@ export const CONSTANTS = {
 		],
 	},
 };
+
+export const tableRows = [
+	{
+		label: "Student ID",
+	},
+	{
+		label: "Name",
+	},
+	{
+		label: "Program",
+	},
+	{
+		label: "Age",
+	},
+	{
+		label: "Address",
+	},
+	{
+		label: "Contact Number",
+	},
+	{
+		label: "Action",
+	},
+];

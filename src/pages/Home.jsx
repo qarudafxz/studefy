@@ -5,12 +5,13 @@ import NumOfStudents from "../components/NumOfStudents";
 import RecentlyAdded from "../components/RecentlyAdded";
 import RecentlyDeleted from "../components/RecentlyDeleted";
 import GroupDetails from "../components/GroupDetails";
+import Students from "../components/Students";
 import Requiremens from "../components/Requiremens";
 
 function Home() {
 	return (
 		<div className='font-main flex flex-row'>
-			<div className='mx-20 mt-10 w-8/12'>
+			<div className='mx-20 mt-10 w-9/12'>
 				<Navbar />
 				<div className='flex justify-between items-center mt-12'>
 					<div className='flex flex-col gap-2'>
@@ -34,6 +35,7 @@ function Home() {
 				</div>
 				<div className='flex flex-col gap-4 mt-10'>
 					<h1 className='font-bold text-4xl'>Student List</h1>
+					<Students />
 				</div>
 			</div>
 			<div className='mx-24 mt-10 w-5/12'>
