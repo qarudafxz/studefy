@@ -16,13 +16,9 @@ function Requiremens() {
 							<motion.div
 								initial={{ opacity: 0, scale: 0.5 }}
 								animate={{ opacity: 1, scale: 1 }}
-								transition={{
-									duration: 0.8,
-									delay: 0.9,
-									ease: [0, 0.71, 0.2, 1.01],
-								}}
+								whileHover={{ scale: 1.035 }}
 								key={idx}
-								className='flex flex-row gap-8 items-center bg-[#f1f1f1] rounded-md p-2'>
+								className='flex flex-row gap-8 items-center bg-[#f1f1f1] rounded-md p-2 cursor-cell'>
 								{desc.icon}
 								<h1 className='font-thin text-sm'>{desc.desc}</h1>
 							</motion.div>
@@ -34,13 +30,9 @@ function Requiremens() {
 							<motion.div
 								initial={{ opacity: 0, scale: 0.5 }}
 								animate={{ opacity: 1, scale: 1 }}
-								transition={{
-									duration: 0.8,
-									delay: 0.9,
-									ease: [0, 0.71, 0.2, 1.01],
-								}}
+								whileHover={{ scale: 1.035 }}
 								key={idx}
-								className='flex flex-row gap-8 items-center bg-[#f1f1f1] rounded-md p-2'>
+								className='flex flex-row gap-8 items-center bg-[#f1f1f1] rounded-md p-2 cursor-cell'>
 								{desc.icon}
 								<h1 className='font-thin text-sm'>{desc.desc}</h1>
 							</motion.div>
