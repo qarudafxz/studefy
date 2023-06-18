@@ -23,7 +23,7 @@ function Students() {
 
 	return (
 		<div>
-			<table className='w-full mt-4'>
+			<table className='w-full'>
 				<thead>
 					{/* Table header */}
 					<tr className='border'>
@@ -49,6 +49,7 @@ function Students() {
 								index % 2 === 0 ? "bg-[#eeeeee]" : "bg-[#D5D5D5]"
 							}`}>
 							<td className='text-sm p-4 border border-white'>{student.id}</td>
+							<td className='text-sm p-4 border border-white'>{student.student_id}</td>
 							<td className='text-sm p-4 border border-white'>{student.name}</td>
 							<td className='text-sm p-4 border border-white'>{student.program}</td>
 							<td className='text-sm p-4 border border-white'>{student.age}</td>

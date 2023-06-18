@@ -1,6 +1,7 @@
 export const students = [
 	{
 		id: 1,
+		student_id: "211-00483",
 		name: "Francis Tin-ao",
 		program: "BSIT",
 		age: 20,
@@ -9,6 +10,7 @@ export const students = [
 	},
 	{
 		id: 2,
+		student_id: "211-00483",
 		name: "Carlo Gaballo",
 		program: "BSIT",
 		age: 69,
@@ -17,6 +19,7 @@ export const students = [
 	},
 	{
 		id: 3,
+		student_id: "211-00483",
 		name: "Patrick Dionen",
 		program: "BSIT",
 		age: 20,
@@ -25,6 +28,7 @@ export const students = [
 	},
 	{
 		id: 4,
+		student_id: "211-00483",
 		name: "Angelo Galope",
 		program: "BSIT",
 		age: 22,
@@ -33,6 +37,7 @@ export const students = [
 	},
 	{
 		id: 5,
+		student_id: "211-00483",
 		name: "Emily Smith",
 		program: "BSIT",
 		age: 21,
@@ -41,6 +46,7 @@ export const students = [
 	},
 	{
 		id: 6,
+		student_id: "211-00483",
 		name: "Daniel Brown",
 		program: "BSIT",
 		age: 20,
@@ -49,6 +55,7 @@ export const students = [
 	},
 	{
 		id: 7,
+		student_id: "211-00483",
 		name: "Olivia Davis",
 		program: "BSIT",
 		age: 19,
@@ -57,6 +64,7 @@ export const students = [
 	},
 	{
 		id: 8,
+		student_id: "211-00483",
 		name: "William Wilson",
 		program: "BSIT",
 		age: 20,
@@ -65,6 +73,7 @@ export const students = [
 	},
 	{
 		id: 9,
+		student_id: "211-00483",
 		name: "Sophia Anderson",
 		program: "BSIT",
 		age: 20,
@@ -73,6 +82,7 @@ export const students = [
 	},
 	{
 		id: 10,
+		student_id: "211-00483",
 		name: "Liam Thomas",
 		program: "BSIT",
 		age: 20,
@@ -81,6 +91,7 @@ export const students = [
 	},
 	{
 		id: 11,
+		student_id: "211-00483",
 		name: "Ava Martinez",
 		program: "BSIT",
 		age: 20,
@@ -89,6 +100,7 @@ export const students = [
 	},
 	{
 		id: 12,
+		student_id: "211-00483",
 		name: "Noah Clark",
 		program: "BSIT",
 		age: 20,
@@ -97,6 +109,7 @@ export const students = [
 	},
 	{
 		id: 13,
+		student_id: "211-00483",
 		name: "Isabella Lewis",
 		program: "BSIT",
 		age: 20,
@@ -105,6 +118,7 @@ export const students = [
 	},
 	{
 		id: 14,
+		student_id: "211-00483",
 		name: "James Moore",
 		program: "BSIT",
 		age: 20,

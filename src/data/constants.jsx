@@ -65,6 +65,9 @@ export const CONSTANTS = {
 
 export const tableRows = [
 	{
+		label: "ID",
+	},
+	{
 		label: "Student ID",
 	},
 	{
