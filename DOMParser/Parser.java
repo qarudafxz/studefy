@@ -63,12 +63,13 @@ public class Parser {
           );
           student.displayInfo();
 
-          // Store the student data using the RMI client
-
           System.out.println("-----------------------");
           System.out.println("\n");
         }
       }
+
+      // Add the following line to explicitly exit the program
+      System.exit(0);
     } catch (Exception e) {
       e.printStackTrace();
     }

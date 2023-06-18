@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { CSSTransition } from "react-transition-group";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 
-function Extracted(props) {
+function Extracted({ ...props }) {
 	useEffect(() => {
 		if (props.isExtract) {
 			setTimeout(() => {
