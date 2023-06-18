@@ -69,13 +69,13 @@ function Navbar() {
 			<div className='flex gap-8'>
 				<button
 					onClick={() => setIsClick(!isClick)}
-					className='font-thin flex gap-4 items-center py-2 px-4 hover:bg-[#D5D5D5] duration-300 rounded-full'>
+					className='font-thin flex gap-4 items-center py-2 px-4 border border-[#D5D5D5] rounded-full hover:bg-[#D5D5D5] duration-300'>
 					<BiPlusCircle />
-					Add Record
+					Add Student
 				</button>
 				<button
 					onClick={extractDataInJava}
-					className='font-thin flex gap-4 items-center py-2 px-4 hover:bg-[#D5D5D5] duration-300 rounded-full'>
+					className='font-thin flex gap-4 items-center py-2 px-4 border border-[#D5D5D5] rounded-full hover:bg-[#D5D5D5] duration-300'>
 					<BsFillFileEarmarkCodeFill />
 					Extract Data
 				</button>

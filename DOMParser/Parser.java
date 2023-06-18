@@ -1,5 +1,7 @@
 package DOMParser;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
@@ -11,6 +13,8 @@ import server.rmi_server.StudentImpl;
 public class Parser {
 
   public static void main(String[] args) {
+    List<StudentImpl> studentList = new ArrayList<>();
+
     try {
       DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
       DocumentBuilder builder = factory.newDocumentBuilder();
@@ -61,7 +65,9 @@ public class Parser {
             address,
             contact_number
           );
+
           s1.displayInfo();
+          studentList.add(s1);
 
           System.out.println("-----------------------");
           System.out.println("\n");
