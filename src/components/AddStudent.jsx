@@ -116,7 +116,7 @@ function AddStudent({ ...props }) {
 							src={Logo}
 							className='h-auto w-32'
 						/>
-						<h1 className='font-bold text-2xl'>Add Student</h1>
+						<h1 className='font-bold text-2xl'>Add New Student</h1>
 						<IoCloseCircleSharp
 							className='cursor-pointer'
 							size={40}

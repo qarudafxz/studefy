@@ -6,7 +6,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import server.rmi_client.Student;
+import server.rmi_server.StudentImpl;
 
 public class Parser {
 
@@ -53,7 +53,7 @@ public class Parser {
             .item(0)
             .getTextContent();
 
-          Student s1 = new Student(
+          StudentImpl s1 = new StudentImpl(
             id,
             programid,
             name,
@@ -62,6 +62,7 @@ public class Parser {
             contact_number
           );
           s1.displayInfo();
+
           System.out.println("-----------------------");
           System.out.println("\n");
         }

@@ -18,13 +18,6 @@ function Navbar() {
 	const [message, setMessage] = useState("");
 	const [progress, setProgress] = useState(0);
 
-	const map = [
-		{
-			name: "Dashboard",
-			path: "/",
-		},
-	];
-
 	const extractDataInJava = async () => {
 		setIsExtract(false);
 		setProgress(30);
@@ -74,15 +67,6 @@ function Navbar() {
 				/>
 			</motion.div>
 			<div className='flex gap-8'>
-				{map.map((item, index) => {
-					return (
-						<div
-							key={index}
-							className='py-2 px-4 font-thin hover:bg-[#D5D5D5] duration-300 rounded-full'>
-							<Link to={item.path}>{item.name}</Link>
-						</div>
-					);
-				})}
 				<button
 					onClick={() => setIsClick(!isClick)}
 					className='font-thin flex gap-4 items-center py-2 px-4 hover:bg-[#D5D5D5] duration-300 rounded-full'>

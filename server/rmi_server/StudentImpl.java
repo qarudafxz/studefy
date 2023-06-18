@@ -1,6 +1,6 @@
-package server.rmi_client;
+package server.rmi_server;
 
-public class Student {
+public class StudentImpl {
   protected String id;
   protected String programid;
   protected String name;
@@ -8,7 +8,7 @@ public class Student {
   protected String address;
   protected String contact_number;
 
-  public Student(
+  public StudentImpl(
     String id,
     String programid,
     String name,
