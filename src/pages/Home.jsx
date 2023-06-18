@@ -22,12 +22,16 @@ function Home() {
 						</p>
 					</div>
 					<h1 className='flex flex-row gap-4 items-center bg-[#f1f1f1] py-2 px-4 rounded-md'>
+						<LiveClock />
 						{new Date().toLocaleDateString("en-US", {
 							year: "numeric",
 							month: "long",
 							day: "numeric",
+
+							timeZone: "Asia/Manila",
+							timeZoneName: "short",
+							weekday: "long",
 						})}
-						<LiveClock />
 					</h1>
 				</div>
 				<div className='grid grid-cols-3 mt-8 gap-4'>
