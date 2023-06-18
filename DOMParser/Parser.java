@@ -1,20 +1,16 @@
 package DOMParser;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import server.rmi_server.StudentImpl;
+import server.StudentImpl;
 
 public class Parser {
 
   public static void main(String[] args) {
-    List<StudentImpl> studentList = new ArrayList<>();
-
     try {
       DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
       DocumentBuilder builder = factory.newDocumentBuilder();
@@ -32,7 +28,7 @@ public class Parser {
           Element eElement = (Element) nNode;
 
           String id = eElement.getAttribute("id");
-          String programid = eElement
+          String programId = eElement
             .getElementsByTagName("programid")
             .item(0)
             .getTextContent();
@@ -52,22 +48,22 @@ public class Parser {
             .item(0)
             .getTextContent();
 
-          String contact_number = eElement
+          String contactNumber = eElement
             .getElementsByTagName("contactnumber")
             .item(0)
             .getTextContent();
 
-          StudentImpl s1 = new StudentImpl(
+          StudentImpl student = new StudentImpl(
             id,
-            programid,
+            programId,
             name,
             age,
             address,
-            contact_number
+            contactNumber
           );
+          student.displayInfo();
 
-          s1.displayInfo();
-          studentList.add(s1);
+          // Store the student data using the RMI client
 
           System.out.println("-----------------------");
           System.out.println("\n");
