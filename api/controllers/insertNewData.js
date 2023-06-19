@@ -1,6 +1,6 @@
 import express from "express";
 import fs from "fs";
-import { spawn } from "child_process";
+import { spawn, exec } from "child_process";
 
 const router = express.Router();
 
@@ -108,6 +108,20 @@ router.get("/extractData", (req, res) => {
 	//closing the java process to avoid memory leaks
 	javaProcess.on("close", () => {
 		res.status(201).json({ message: "Data extraction completed" });
+	});
+});
+
+//invoke the method displayInfo from the Java RMIServer
+router.get("/displayInfo", (req, res) => {
+	exec("node api\\controllers\\startJava.cjs", (error, stdout, stderr) => {
+		if (error) {
+			console.error(`Error: ${error.message}`);
+			return res.status(500).json({ message: "Failed to invoke displayInfo" });
+		}
+		console.log(stdout);
+		console.error(stderr);
+
+		return res.status(200).json({ message: "displayInfo invoked successfully" });
 	});
 });
 
