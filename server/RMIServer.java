@@ -7,12 +7,8 @@ import java.rmi.server.UnicastRemoteObject;
 
 public class RMIServer extends UnicastRemoteObject implements RMIInterface {
 
-  public RMIServer() throws RemoteException {
-    // Constructor required for UnicastRemoteObject
-  }
-
-  public void displayInfo() throws RemoteException {
-    System.out.println("Hello world");
+  protected RMIServer() throws RemoteException {
+    super();
   }
 
   public static void main(String[] args) {
@@ -23,10 +19,17 @@ public class RMIServer extends UnicastRemoteObject implements RMIInterface {
       Registry registry = LocateRegistry.createRegistry(1099);
       registry.rebind("RMIInterface", stub);
 
-      System.out.println("Server is ready.");
+      System.out.println("Server is ready...");
     } catch (RemoteException e) {
       System.err.println("Error: " + e.getMessage());
       e.printStackTrace();
     }
+  }
+
+  @Override
+  public void displayInfo() throws RemoteException {
+    throw new UnsupportedOperationException(
+      "Unimplemented method 'displayInfo'"
+    );
   }
 }

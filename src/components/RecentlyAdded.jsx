@@ -47,8 +47,8 @@ function RecentlyAdded() {
 			}}>
 			<div className='absolute top-0 left-0 right-0 bottom-0'></div>
 			<div className='relative flex justify-between items-center'>
-				<h1 className='font-thin text-md'>Recently Added Student</h1>
-				<BsFillPersonBadgeFill />
+				<h1 className='font-thin text-md'>Recently Added Student to XML</h1>
+				<BsFillPersonBadgeFill size={20} />
 			</div>
 			<div className='flex flex-col'>
 				<h1 className='font-semibold'>

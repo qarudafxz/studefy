@@ -111,17 +111,17 @@ router.get("/extractData", (req, res) => {
 	});
 });
 
-//invoke the method displayInfo from the Java RMIServer
 router.get("/displayInfo", (req, res) => {
-	exec("node api\\controllers\\startJava.cjs", (error, stdout, stderr) => {
-		if (error) {
-			console.error(`Error: ${error.message}`);
-			return res.status(500).json({ message: "Failed to invoke displayInfo" });
+	exec("node api\\controllers\\startJava.cjs", (err, stdout, stderr) => {
+		if (err) {
+			console.error(err);
+			return res.status(500).json({ message: "Error executing java file" });
 		}
-		console.log(stdout);
-		console.error(stderr);
 
-		return res.status(200).json({ message: "displayInfo invoked successfully" });
+		console.log(stdout);
+		console.log(stderr);
+
+		return res.status(200).json({ message: "Data extraction completed" });
 	});
 });
 

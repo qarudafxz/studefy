@@ -1,17 +1,31 @@
 package DOMParser;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import server.StudentImpl;
 
 public class Parser {
 
   public static void main(String[] args) {
+    String url = "jdbc:mysql://localhost:3306/it106_final_proj";
+    String username = "root";
+    String password = "root";
+
     try {
+      Class.forName("com.mysql.cj.jdbc.Driver");
+
+      Connection connection = DriverManager.getConnection(
+        url,
+        username,
+        password
+      );
+
       DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
       DocumentBuilder builder = factory.newDocumentBuilder();
       Document doc = builder.parse("D:\\IT106_ACTIVITY\\student.xml");
@@ -20,6 +34,15 @@ public class Parser {
         "Root element: " + doc.getDocumentElement().getNodeName()
       );
       NodeList nList = doc.getElementsByTagName("student");
+
+      String insertQuery =
+        "INSERT INTO tbl_students (student_id, program, name, age, address, contact_number) VALUES (?, ?, ?, ?, ?)";
+      PreparedStatement preparedStatement = connection.prepareStatement(
+        insertQuery
+      );
+
+      connection.createStatement();
+
       System.out.println("----------------------------");
       for (int i = 0; i < nList.getLength(); i++) {
         Node nNode = nList.item(i);
@@ -53,22 +76,22 @@ public class Parser {
             .item(0)
             .getTextContent();
 
-          StudentImpl student = new StudentImpl(
-            id,
-            programId,
-            name,
-            age,
-            address,
-            contactNumber
-          );
-          student.displayInfo();
+          preparedStatement.setString(1, id);
+          preparedStatement.setString(2, programId);
+          preparedStatement.setString(3, name);
+          preparedStatement.setString(4, age);
+          preparedStatement.setString(5, address);
+          preparedStatement.setString(6, contactNumber);
 
-          System.out.println("-----------------------");
-          System.out.println("\n");
+          int rowsAffected = preparedStatement.executeUpdate();
+
+          if (rowsAffected > 0) {
+            System.out.println("Data inserted successfully.");
+          } else {
+            System.out.println("Data insertion failed.");
+          }
         }
       }
-
-      // Add the following line to explicitly exit the program
       System.exit(0);
     } catch (Exception e) {
       e.printStackTrace();

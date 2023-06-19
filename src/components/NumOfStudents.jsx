@@ -22,7 +22,7 @@ function NumOfStudents() {
 			whileHover={{ scale: 1.05 }}
 			className='flex flex-col gap-2 p-4 border border-[#D5D5D5] rounded-md shadow-xl bg-gradient-to-tr from-slate-700 to-slate-400 text-white'>
 			<div className='flex justify-between items-center'>
-				<h1 className='font-thin text-md'>Number of Students</h1>
+				<h1 className='font-thin text-md'>Number of Students from XML</h1>
 				<ImUsers />
 			</div>
 			<p className='font-semibold text-7xl'>{count}</p>

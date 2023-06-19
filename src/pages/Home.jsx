@@ -8,6 +8,8 @@ import GroupDetails from "../components/GroupDetails";
 import Students from "../components/Students";
 import Requiremens from "../components/Requiremens";
 import LiveClock from "../components/LiveClock";
+import NumberOfStudentsFromSQL from "../components/NumberOfStudentsFromSQL";
+import RecentlyAddedToDb from "../components/RecentlyAddedToDb";
 
 function Home() {
 	return (
@@ -36,8 +38,10 @@ function Home() {
 				</div>
 				<div className='grid grid-cols-3 mt-8 gap-4'>
 					<RecentlyAdded />
+					<RecentlyAddedToDb />
 					<RecentlyDeleted />
 					<NumOfStudents />
+					<NumberOfStudentsFromSQL />
 				</div>
 				<div className='flex flex-col gap-4 mt-10'>
 					<div className='flex flex-col gap-2'>

@@ -12,7 +12,7 @@ function Extracted({ ...props }) {
 	}, [props.isExtract]);
 
 	return (
-		<div className='absolute top-96 left-1/3 ml-20 flex items-center justify-center'>
+		<div className='absolute top-96 left-1/3 my-4 ml-24 flex items-center justify-center'>
 			<CSSTransition
 				in={props.isExtract}
 				timeout={800}

@@ -18,9 +18,11 @@ function RecentlyAdded() {
 				position: "relative",
 				backgroundRepeat: "no-repeat",
 			}}>
-			<div className='flex justify-between items-center'>
-				<h1 className='font-thin text-md '>Recently Removed Student</h1>
-				<MdOutlineTransferWithinAStation />
+			<div className='flex justify-between items-center gap-8'>
+				<h1 className='font-thin text-md '>
+					Recently Removed Student from Database
+				</h1>
+				<MdOutlineTransferWithinAStation size={40} />
 			</div>
 			<div className='flex flex-col'>
 				<h1 className='font-semibold'>Student ID:</h1>

@@ -14,4 +14,18 @@
 					<address>Libertad, Butuan City</address>
 					<contactnumber>09123456789</contactnumber>
      </student>
+    <student id="211-11111">
+     <programid>BSCS</programid>
+     <name>Armiex Roble</name>
+					<age>20</age>
+					<address>Ampayon, Butuan City</address>
+					<contactnumber>09123456789</contactnumber>
+     </student>
+    <student id="211-00483">
+     <programid>BSIS</programid>
+     <name>Fra Fra</name>
+					<age>20</age>
+					<address>adas</address>
+					<contactnumber>sadsa</contactnumber>
+     </student>
     </students>
