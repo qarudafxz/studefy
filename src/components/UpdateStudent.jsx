@@ -15,11 +15,9 @@ function UpdateStudent({ ...props }) {
 	const [age, setAge] = useState(0);
 	const [address, setAddress] = useState("");
 	const [contactNumber, setContactNumber] = useState("");
-	const [progress, setProgress] = useState(0);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		setProgress(30);
 
 		if (!id || !program || !name || !age || !address || !contactNumber) {
 			toast.error("Please enter all student information!", {
@@ -32,11 +30,11 @@ function UpdateStudent({ ...props }) {
 				progress: undefined,
 				theme: "light",
 			});
-			setProgress(100);
+
 			return;
 		}
 
-		await fetch("http://localhost:3002/api/update", {
+		await fetch(`http://localhost:3002/api/update/${props.dataForEdit.id}`, {
 			method: "PUT",
 			headers: {
 				"Content-Type": "application/json",
@@ -55,7 +53,7 @@ function UpdateStudent({ ...props }) {
 
 				toast.error(data.message, {
 					position: "top-right",
-					autoClose: 4000,
+					autoClose: 2900,
 					hideProgressBar: false,
 					closeOnClick: true,
 					pauseOnHover: true,
@@ -65,9 +63,9 @@ function UpdateStudent({ ...props }) {
 				});
 				return;
 			} else {
-				toast.success("Student added successfully! \n Please wait...", {
+				toast.success("Student Data Updated successfully! \n Please wait...", {
 					position: "top-right",
-					autoClose: 3000,
+					autoClose: 2900,
 					hideProgressBar: false,
 					closeOnClick: true,
 					pauseOnHover: true,
@@ -75,7 +73,7 @@ function UpdateStudent({ ...props }) {
 					progress: undefined,
 					theme: "light",
 				});
-				setProgress(100);
+
 				setTimeout(() => {
 					window.location.reload();
 				}, 3300);
@@ -120,11 +118,11 @@ function UpdateStudent({ ...props }) {
 									src={Logo}
 									className='h-auto w-32'
 								/>
-								<h1 className='font-bold text-2xl'>Update The Student</h1>
+								<h1 className='font-bold text-2xl'>Edit Student Data</h1>
 								<IoCloseCircleSharp
 									className='cursor-pointer'
 									size={40}
-									onClick={() => props.setIsClick(!props.isClick)}
+									onClick={() => props.setIsModalOpen(!props.isModalOpen)}
 								/>
 							</div>
 							<div className='flex flex-col gap-4 mt-8'>
@@ -132,12 +130,14 @@ function UpdateStudent({ ...props }) {
 								<input
 									type='text'
 									className='border border-[#D5D5D5] py-2 pl-2 rounded-md focus:outline-none'
+									placeholder={props.dataForEdit.student_id}
 									onChange={(e) => setStudentid(e.target.value)}
 								/>
 								<h1 className='font-semibold'>Student Program:</h1>
 								<input
 									type='text'
 									className='border border-[#D5D5D5] py-2 pl-2 rounded-md focus:outline-none'
+									placeholder={props.dataForEdit.program}
 									onChange={(e) => setProgram(e.target.value)}
 								/>
 								<h1 className='font-semibold'>Student Name:</h1>
@@ -145,29 +145,33 @@ function UpdateStudent({ ...props }) {
 									type='text'
 									className='border border-[#D5D5D5] py-2 pl-2 rounded-md focus:outline-none'
 									onChange={(e) => setName(e.target.value)}
+									placeholder={props.dataForEdit.name}
 								/>
 								<h1 className='font-semibold'>Student Age:</h1>
 								<input
 									type='text'
 									className='border border-[#D5D5D5] py-2 pl-2 rounded-md focus:outline-none'
 									onChange={(e) => setAge(e.target.value)}
+									placeholder={props.dataForEdit.age}
 								/>
 								<h1 className='font-semibold'>Student Address:</h1>
 								<input
 									type='text'
 									className='border border-[#D5D5D5] py-2 pl-2 rounded-md focus:outline-none'
 									onChange={(e) => setAddress(e.target.value)}
+									placeholder={props.dataForEdit.address}
 								/>
 								<h1 className='font-semibold'>Student Contact Number:</h1>
 								<input
 									type='text'
 									className='border border-[#D5D5D5] py-2 pl-2 rounded-md focus:outline-none'
 									onChange={(e) => setContactNumber(e.target.value)}
+									placeholder={props.dataForEdit.contact_number}
 								/>
 								<button
 									type='submit'
 									className='mt-12 bg-gradient-to-tr from-slate-700 to-slate-400 text-white font-bold py-3 rounded-md'>
-									Add Record
+									Update Record
 								</button>
 							</div>
 						</motion.form>

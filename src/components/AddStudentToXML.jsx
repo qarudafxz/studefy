@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import { IoCloseCircleSharp } from "react-icons/io5";
@@ -8,16 +8,18 @@ import "react-toastify/dist/ReactToastify.css";
 
 import Logo from "../assets/logo.svg";
 
-function AddStudent({ ...props }) {
+function AddStudentToXML({ ...props }) {
 	const [id, setStudentid] = useState("");
 	const [program, setProgram] = useState("");
 	const [name, setName] = useState("");
 	const [age, setAge] = useState(0);
 	const [address, setAddress] = useState("");
 	const [contactNumber, setContactNumber] = useState("");
+	const [progress, setProgress] = useState(0);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		setProgress(30);
 
 		if (!id || !program || !name || !age || !address || !contactNumber) {
 			toast.error("Please enter all student information!", {
@@ -30,22 +32,22 @@ function AddStudent({ ...props }) {
 				progress: undefined,
 				theme: "light",
 			});
-
+			setProgress(100);
 			return;
 		}
 
-		await fetch("http://localhost:3002/api/insert", {
+		await fetch("http://localhost:3001/api/insert", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 			},
 			body: JSON.stringify({
-				student_id: id,
-				student_program: program,
-				student_name: name,
-				student_age: age,
-				student_address: address,
-				student_contact_number: contactNumber,
+				id,
+				program,
+				name,
+				age,
+				address,
+				contact_number: contactNumber,
 			}),
 		}).then((res) => {
 			if (res.status === 500) {
@@ -73,7 +75,7 @@ function AddStudent({ ...props }) {
 					progress: undefined,
 					theme: "light",
 				});
-
+				setProgress(100);
 				setTimeout(() => {
 					window.location.reload();
 				}, 3300);
@@ -116,11 +118,11 @@ function AddStudent({ ...props }) {
 							src={Logo}
 							className='h-auto w-32'
 						/>
-						<h1 className='font-bold text-2xl'>Add New Student to DB</h1>
+						<h1 className='font-bold text-2xl'>Add New Student to XML</h1>
 						<IoCloseCircleSharp
 							className='cursor-pointer'
 							size={40}
-							onClick={() => props.setIsClick(!props.isClick)}
+							onClick={() => props.setIsClickXML(!props.isClickXML)}
 						/>
 					</div>
 					<div className='flex flex-col gap-4 mt-8'>
@@ -172,4 +174,4 @@ function AddStudent({ ...props }) {
 	);
 }
 
-export default AddStudent;
+export default AddStudentToXML;

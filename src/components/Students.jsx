@@ -7,6 +7,8 @@ import { FiEdit } from "react-icons/fi";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import UpdateStudent from "./UpdateStudent";
+
 function Students() {
 	const [progress, setProgress] = useState(0);
 	const [studentData, setStudentData] = useState([] || studentData);
@@ -99,9 +101,18 @@ function Students() {
 				pauseOnHover
 				theme='dark'
 			/>
+			{isModalOpen && (
+				<UpdateStudent
+					isModalOpen={isModalOpen}
+					setIsModalOpen={setIsModalOpen}
+					dataForEdit={dataForEdit}
+					setDataForEdit={setDataForEdit}
+				/>
+			)}
 			<table className='w-full'>
 				<thead>
 					{/* Table header */}
+					{}
 					<tr className='border'>
 						{tableRows.map((row, index) => (
 							<th
@@ -134,30 +145,29 @@ function Students() {
 								{student.contact_number}
 							</td>
 							<td className='flex gap-4 items-center p-4 pl-6'>
-								<h1 className='flex gap-2 items-center bg-[#32a827] px-2 text-white cursor-pointer rounded-md'>
+								<button
+									className='flex gap-2 items-center bg-[#32a827] px-2 text-white cursor-pointer rounded-md hover:bg-[#13550e] duration-150'
+									onClick={() => {
+										setIsModalOpen(true);
+										setDataForEdit(student);
+									}}>
 									<FiEdit
 										className='p-2'
 										size={30}
-										onClick={() => {
-											console.log("Edit");
-											setIsModalOpen(true);
-											setDataForEdit(student);
-
-											console.log(dataForEdit);
-										}}
 									/>
 									Edit
-								</h1>
-								<h1 className='flex gap-2 items-center bg-[#c42828] px-2 text-white cursor-pointer rounded-md'>
+								</button>
+								<button
+									className='flex gap-2 items-center bg-[#c42828] px-2 text-white cursor-pointer rounded-md hover:bg-[#851313] duration-150'
+									onClick={() => {
+										handleDelete(student.id);
+									}}>
 									<BsTrash3
 										className='p-2'
 										size={30}
-										onClick={() => {
-											handleDelete(student.id);
-										}}
 									/>
 									Delete
-								</h1>
+								</button>
 							</td>
 						</tr>
 					))}

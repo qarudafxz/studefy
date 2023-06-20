@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.get("/all", fetchAllData);
 router.post("/insert", addStudent);
-router.put("/update", updateStudent);
+router.put("/update/:id", updateStudent);
 router.delete("/delete/:id", deleteStudent);
 
 export { router as fetchDataRouter };

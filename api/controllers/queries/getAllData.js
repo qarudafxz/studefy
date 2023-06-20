@@ -45,8 +45,8 @@ export const addStudent = async (req, res) => {
 };
 
 export const updateStudent = async (req, res) => {
+	const { id } = req.params;
 	const {
-		id,
 		student_id,
 		student_program,
 		student_name,

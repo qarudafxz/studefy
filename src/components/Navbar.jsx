@@ -9,11 +9,13 @@ import Extracted from "./Extracted";
 import { BiPlusCircle } from "react-icons/bi";
 import { BsFillFileEarmarkCodeFill } from "react-icons/bs";
 import AddStudent from "../components/AddStudent";
+import AddStudentToXML from "./AddStudentToXML";
 
 import { motion } from "framer-motion";
 
 function Navbar() {
 	const [isClick, setIsClick] = useState(false);
+	const [isClickXML, setIsClickXML] = useState(false);
 	const [isExtract, setIsExtract] = useState(null);
 	const [message, setMessage] = useState("");
 	const [progress, setProgress] = useState(0);
@@ -56,6 +58,12 @@ function Navbar() {
 					setIsClick={setIsClick}
 				/>
 			)}
+			{isClickXML && (
+				<AddStudentToXML
+					isClickXML={isClickXML}
+					setIsClickXML={setIsClickXML}
+				/>
+			)}
 			<motion.div
 				initial={{ opacity: 0, scale: 0.5 }}
 				animate={{ opacity: 1, scale: 1 }}
@@ -71,10 +79,16 @@ function Navbar() {
 			</motion.div>
 			<div className='flex gap-8'>
 				<button
+					onClick={() => setIsClickXML(!isClickXML)}
+					className='font-thin flex gap-4 items-center py-2 px-4 border border-[#D5D5D5] rounded-full hover:bg-[#D5D5D5] duration-300'>
+					<BiPlusCircle />
+					Add Student to XML
+				</button>
+				<button
 					onClick={() => setIsClick(!isClick)}
 					className='font-thin flex gap-4 items-center py-2 px-4 border border-[#D5D5D5] rounded-full hover:bg-[#D5D5D5] duration-300'>
 					<BiPlusCircle />
-					Add Student
+					Add Student to DB
 				</button>
 				<button
 					onClick={extractDataInJava}

@@ -22,13 +22,13 @@ function RecentlyAddedToDb() {
 			</div>
 			<div className='flex flex-col'>
 				<h1 className='font-semibold'>
-					Student ID: <span className='font-thin'>Static</span>
+					Student ID: <span className='font-thin'></span>
 				</h1>
 				<h1 className='font-semibold'>
-					Student Program: <span className='font-thin'>Static</span>
+					Student Program: <span className='font-thin'></span>
 				</h1>
 				<h1 className='font-semibold'>
-					Student Name: <span className='font-thin'>Static</span>
+					Student Name: <span className='font-thin'></span>
 				</h1>
 			</div>
 		</motion.div>
