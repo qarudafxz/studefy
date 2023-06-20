@@ -4,10 +4,16 @@ import { tableRows } from "../data/constants";
 import { BsTrash3 } from "react-icons/bs";
 import { FiEdit } from "react-icons/fi";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function Students() {
+	const [progress, setProgress] = useState(0);
 	const [studentData, setStudentData] = useState([] || studentData);
 	const pageSize = 2; // Number of rows per page
 	const [currentPage, setCurrentPage] = useState(1);
+	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [dataForEdit, setDataForEdit] = useState({});
 
 	const handlePageChange = (page) => {
 		setCurrentPage(page);
@@ -34,12 +40,65 @@ function Students() {
 		}
 	};
 
+	const handleDelete = async (id) => {
+		try {
+			await fetch(`http://localhost:3002/api/delete/${id}`, {
+				method: "DELETE",
+			}).then((res) => {
+				if (res.status === 500) {
+					const data = res.json();
+
+					toast.error(data.message, {
+						position: "top-right",
+						autoClose: 2900,
+						hideProgressBar: false,
+						closeOnClick: true,
+						pauseOnHover: false,
+						draggable: true,
+						progress: undefined,
+						theme: "light",
+					});
+					return;
+				} else {
+					toast.success("Student successfully deleted \n Please wait...", {
+						position: "top-right",
+						autoClose: 2900,
+						hideProgressBar: false,
+						closeOnClick: true,
+						pauseOnHover: false,
+						draggable: true,
+						progress: undefined,
+						theme: "light",
+					});
+					setProgress(100);
+					setTimeout(() => {
+						window.location.reload();
+					}, 3300);
+					return;
+				}
+			});
+		} catch (err) {
+			console.log(err);
+		}
+	};
+
 	useEffect(() => {
 		handleFetchData();
 	}, []);
 
 	return (
 		<div>
+			<ToastContainer
+				position='top-right'
+				hideProgressBar={false}
+				newestOnTop={false}
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+				theme='dark'
+			/>
 			<table className='w-full'>
 				<thead>
 					{/* Table header */}
@@ -79,6 +138,13 @@ function Students() {
 									<FiEdit
 										className='p-2'
 										size={30}
+										onClick={() => {
+											console.log("Edit");
+											setIsModalOpen(true);
+											setDataForEdit(student);
+
+											console.log(dataForEdit);
+										}}
 									/>
 									Edit
 								</h1>
@@ -86,6 +152,9 @@ function Students() {
 									<BsTrash3
 										className='p-2'
 										size={30}
+										onClick={() => {
+											handleDelete(student.id);
+										}}
 									/>
 									Delete
 								</h1>
