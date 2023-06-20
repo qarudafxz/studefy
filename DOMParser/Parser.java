@@ -13,9 +13,9 @@ import org.w3c.dom.NodeList;
 public class Parser {
 
   public static void main(String[] args) {
-    String url = "jdbc:mysql://localhost:3306/it106_final_proj";
+    String url = "jdbc:mysql://localhost:3306/ite106_final_proj";
     String username = "root";
-    String password = "root";
+    String password = "";
 
     try {
       Class.forName("com.mysql.cj.jdbc.Driver");
@@ -36,7 +36,7 @@ public class Parser {
       NodeList nList = doc.getElementsByTagName("student");
 
       String insertQuery =
-        "INSERT INTO tbl_students (student_id, program, name, age, address, contact_number) VALUES (?, ?, ?, ?, ?)";
+        "INSERT INTO tbl_students (student_id, program, name, age, address, contact_number) VALUES (?, ?, ?, ?, ?, ?)";
       PreparedStatement preparedStatement = connection.prepareStatement(
         insertQuery
       );

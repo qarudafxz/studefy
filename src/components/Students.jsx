@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { tableRows } from "../data/constants";
 
 import { BsTrash3 } from "react-icons/bs";
 import { FiEdit } from "react-icons/fi";
-//for testing only
-import { students } from "../data/students.js";
 
 function Students() {
+	const [studentData, setStudentData] = useState([] || studentData);
 	const pageSize = 2; // Number of rows per page
 	const [currentPage, setCurrentPage] = useState(1);
 
@@ -15,11 +14,29 @@ function Students() {
 	};
 
 	// Calculate pagination variables
-	const totalStudents = students.length;
+	const totalStudents = studentData?.data?.length;
 	const totalPages = Math.ceil(totalStudents / pageSize);
 	const startIndex = (currentPage - 1) * pageSize;
 	const endIndex = startIndex + pageSize;
-	const currentStudents = students.slice(startIndex, endIndex);
+	const currentStudents = studentData?.data?.slice(startIndex, endIndex);
+
+	const handleFetchData = async () => {
+		try {
+			await fetch("http://localhost:3002/api/all", {
+				method: "GET",
+			})
+				.then((res) => res.json())
+				.then((data) => {
+					setStudentData(data);
+				});
+		} catch (err) {
+			console.log(err);
+		}
+	};
+
+	useEffect(() => {
+		handleFetchData();
+	}, []);
 
 	return (
 		<div>
@@ -42,7 +59,7 @@ function Students() {
 				</thead>
 				<tbody>
 					{/* Table rows */}
-					{currentStudents.map((student, index) => (
+					{currentStudents?.map((student, index) => (
 						<tr
 							key={index}
 							className={`border ${
@@ -54,7 +71,9 @@ function Students() {
 							<td className='text-sm p-4 border border-white'>{student.program}</td>
 							<td className='text-sm p-4 border border-white'>{student.age}</td>
 							<td className='text-sm p-4 border border-white'>{student.address}</td>
-							<td className='text-sm p-4 border border-white'>{student.contact}</td>
+							<td className='text-sm p-4 border border-white'>
+								{student.contact_number}
+							</td>
 							<td className='flex gap-4 items-center p-4 pl-6'>
 								<h1 className='flex gap-2 items-center bg-[#32a827] px-2 text-white cursor-pointer rounded-md'>
 									<FiEdit

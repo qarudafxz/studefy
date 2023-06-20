@@ -17,7 +17,7 @@ function RecentlyAddedToDb() {
 			}}>
 			<div className='absolute top-0 left-0 right-0 bottom-0'></div>
 			<div className='relative flex justify-between items-center gap-8'>
-				<h1 className='font-thin text-md'>Recently Added Student to Databse</h1>
+				<h1 className='font-thin text-md'>Recently Added Student to Database</h1>
 				<BsDatabaseCheck size={30} />
 			</div>
 			<div className='flex flex-col'>

@@ -92,33 +92,73 @@ router.get("/last", async (req, res) => {
 });
 
 //executes the parser file
+// router.get("/extractData", (req, res) => {
+// 	//the spawn fuhnction is a subprocess in nodejs that will execute
+// 	//another program in the nodejs run time environment
+
+// 	/*
+
+// 	The node:child_process module provides the ability to
+// 	spawn subprocesses in a manner that is similar, but
+// 	not identical, to popen(3). This capability is
+// 	primarily provided by the child_process.spawn() function
+
+// 	*/
+// 	// const javaProcess = spawn("java", [
+// 	// 	"D:\\it106_activity\\DOMParser\\Parser.java",
+// 	// ]);
+
+// 	// javaProcess.stdout.on("data", (data) => {
+// 	// 	console.log(data.toString());
+// 	// });
+
+// 	// javaProcess.stderr.on("data", (data) => {
+// 	// 	console.error(data.toString());
+// 	// });
+
+// 	// //closing the java process to avoid memory leaks
+// 	// javaProcess.on("close", () => {
+// 	// 	res.status(201).json({ message: "Data extraction completed" });
+// 	// });
+
+// 	exec("java Parser", (err, stdout, stderr) => {
+// 		if (err) {
+// 			console.error(err);
+// 			return res.status(500).json({ message: "Error executing java file" });
+// 		}
+
+// 		console.log(stdout);
+// 		console.log(stderr);
+// 	});
+// });
+
 router.get("/extractData", (req, res) => {
-	//the spawn fuhnction is a subprocess in nodejs that will execute
-	//another program in the nodejs run time environment
+	const javaFilePath = "D:\\it106_activity\\DOMParser\\Parser.java";
+	const javaDirectoryName = "DOMParser";
+	const javaFileName = "Parser";
 
-	/*
-	
-	The node:child_process module provides the ability to 
-	spawn subprocesses in a manner that is similar, but 
-	not identical, to popen(3). This capability is 
-	primarily provided by the child_process.spawn() function
-	
-	*/
-	const javaProcess = spawn("java", [
-		"D:\\it106_activity\\DOMParser\\Parser.java",
-	]);
+	exec(`java ${javaFilePath}`, (err, stdout, stderr) => {
+		if (err) {
+			console.error(err);
+			return res.status(500).json({ message: "Error compiling Java file" });
+		}
 
-	javaProcess.stdout.on("data", (data) => {
-		console.log(data.toString());
-	});
+		// exec(
+		// 	`java -cp ${javaDirectoryName} ${javaFileName}`,
+		// 	(err, stdout, stderr) => {
+		// 		if (err) {
+		// 			console.error(err);
+		// 			return res.status(500).json({ message: "Error executing Java file" });
+		// 		}
 
-	javaProcess.stderr.on("data", (data) => {
-		console.error(data.toString());
-	});
+		// 		console.log(stdout);
+		// 		console.log(stderr);
+		// 		res.status(201).json({ message: "Data extraction completed" });
+		// 	}
+		// );
 
-	//closing the java process to avoid memory leaks
-	javaProcess.on("close", () => {
-		res.status(201).json({ message: "Data extraction completed" });
+		console.log(stdout);
+		console.log(stderr);
 	});
 });
 

@@ -36,18 +36,18 @@ function AddStudent({ ...props }) {
 			return;
 		}
 
-		await fetch("http://localhost:3001/api/insert", {
+		await fetch("http://localhost:3002/api/insert", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 			},
 			body: JSON.stringify({
-				id,
-				program,
-				name,
-				age,
-				address,
-				contact_number: contactNumber,
+				student_id: id,
+				student_program: program,
+				student_name: name,
+				student_age: age,
+				student_address: address,
+				student_contact_number: contactNumber,
 			}),
 		}).then((res) => {
 			if (res.status === 500) {
@@ -84,7 +84,6 @@ function AddStudent({ ...props }) {
 		});
 	};
 
-	useEffect(() => {}, []);
 	return (
 		<div className='absolute bg-white w-9/12 rounded-md shadow-md'>
 			<ToastContainer

@@ -1,3 +1,5 @@
+//this server is for the backend of interacting with XML File
+
 import express from "express";
 import cors from "cors";
 
