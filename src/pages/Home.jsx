@@ -11,7 +11,11 @@ import LiveClock from "../components/LiveClock";
 import NumberOfStudentsFromSQL from "../components/NumberOfStudentsFromSQL";
 import RecentlyAddedToDb from "../components/RecentlyAddedToDb";
 
+import Dropdown from "react-dropdown";
+import "react-dropdown/style.css";
+
 function Home() {
+	const options = ["Sort by ID", "Sort by Name", "Sort by Program"];
 	return (
 		<div className='font-main flex flex-row'>
 			<div className='mx-20 mt-10 w-9/12'>
@@ -45,7 +49,13 @@ function Home() {
 				</div>
 				<div className='flex flex-col gap-4 mt-10'>
 					<div className='flex flex-col gap-2'>
-						<h1 className='font-bold text-4xl'>Student List</h1>
+						<div className='flex justify-between'>
+							<h1 className='font-bold text-4xl'>Student List</h1>
+							<Dropdown
+								options={options}
+								placeholder='Select an option'
+							/>
+						</div>
 						<p className='font-thin text-sm italic'>
 							These are the list of your students with their corresponding details. You
 							can edit or delete their data
