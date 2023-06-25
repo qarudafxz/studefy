@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { BsDatabaseCheck } from "react-icons/bs";
 import Logo from "../assets/icon.svg";
 
 function RecentlyAddedToDb() {
+	const [recentlyAdded, setRecentlyAdded] = useState({});
+
+	const fetchRecentlyAdded = async () => {
+		try {
+			const result = await fetch("http://localhost:3002/api/last_student", {
+				method: "GET",
+				headers: {
+					"Content-Type": "application/json",
+				},
+			});
+			const data = await result.json();
+			setRecentlyAdded(data.result[0]);
+			console.log(data.result[0]);
+		} catch (err) {
+			console.log(err);
+		}
+	};
+
+	useEffect(() => {
+		fetchRecentlyAdded();
+	}, []);
+
 	return (
 		<motion.div
 			whileHover={{ scale: 1.05 }}
@@ -22,13 +44,13 @@ function RecentlyAddedToDb() {
 			</div>
 			<div className='flex flex-col'>
 				<h1 className='font-semibold'>
-					Student ID: <span className='font-thin'></span>
+					Student ID: <span className='font-thin'>{recentlyAdded.student_id}</span>
 				</h1>
 				<h1 className='font-semibold'>
-					Student Program: <span className='font-thin'></span>
+					Student Program: <span className='font-thin'>{recentlyAdded.program}</span>
 				</h1>
 				<h1 className='font-semibold'>
-					Student Name: <span className='font-thin'></span>
+					Student Name: <span className='font-thin'>{recentlyAdded.name}</span>
 				</h1>
 			</div>
 		</motion.div>

@@ -58,4 +58,11 @@
 					<address>Shesh shesh</address>
 					<contactnumber>0912312314</contactnumber>
      </student>
+    <student id="211-00483">
+     <programid>BSIT</programid>
+     <name>Francis Tin-ao</name>
+					<age>21</age>
+					<address>Butuan</address>
+					<contactnumber>09121321234</contactnumber>
+     </student>
     </students>

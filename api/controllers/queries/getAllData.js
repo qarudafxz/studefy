@@ -82,7 +82,30 @@ export const deleteStudent = async (req, res) => {
 				return res.status(500).json({ err, message: "Server Error" });
 			}
 
-			return res.status(200).json({ message: "Student successfully deleted" });
+			return res
+				.status(200)
+				.json({ result, message: "Student successfully deleted" });
+		});
+	} catch (err) {
+		console.error(err);
+		return res.status(500).json({ err, message: "Server Error" });
+	}
+};
+
+export const getLastStudent = async (req, res) => {
+	const query =
+		"SELECT student_id, program, name FROM tbl_students WHERE id = (SELECT id	FROM tbl_students ORDER BY id DESC LIMIT 1);";
+
+	try {
+		db.query(query, (err, result) => {
+			if (err) {
+				console.error(err);
+				return res.status(500).json({ err, message: "Server Error" });
+			}
+
+			return res
+				.status(201)
+				.json({ result, message: "Last student fetched successfully" });
 		});
 	} catch (err) {
 		console.error(err);
