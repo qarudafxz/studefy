@@ -91,6 +91,8 @@ router.get("/last", async (req, res) => {
 	}
 });
 
+//multi processing using child/fork processes
+
 //executes the parser file
 // router.get("/extractData", (req, res) => {
 // 	//the spawn fuhnction is a subprocess in nodejs that will execute
